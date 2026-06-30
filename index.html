@@ -1078,6 +1078,153 @@
     .fade-in-delay-2 { transition-delay: 0.2s; }
     .fade-in-delay-3 { transition-delay: 0.3s; }
     .fade-in-delay-4 { transition-delay: 0.4s; }
+    /* ─── FERRAMENTAS ESPECIALIDADE ─── */
+    #ferramentas-especialidade { background: var(--branco); }
+
+    .ferra-esp-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+    .ferra-esp-header .section-desc { max-width: 100%; }
+
+    .ferra-especialidade-box {
+      background: var(--cinza-claro);
+      border-left: 4px solid var(--ouro);
+      border-radius: 0 12px 12px 0;
+      padding: 2rem 2.5rem;
+      margin-bottom: 4rem;
+    }
+    .ferra-especialidade-box p {
+      font-size: 1rem;
+      color: var(--cinza-texto);
+      line-height: 1.8;
+    }
+    .ferra-especialidade-box strong { color: var(--verde); font-weight: 700; }
+
+    .ferra-difs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .ferra-dif-card {
+      border: 1px solid var(--cinza-medio);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .ferra-dif-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--verde), var(--ouro));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .ferra-dif-card:hover { border-color: var(--ouro); box-shadow: 0 8px 28px rgba(201,162,39,0.1); transform: translateY(-3px); }
+    .ferra-dif-card:hover::after { transform: scaleX(1); }
+    .ferra-dif-ic {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--verde), var(--verde-medio));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .ferra-dif-ic svg { width: 22px; height: 22px; stroke: var(--ouro-claro); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .ferra-dif-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--verde);
+      margin-bottom: 0.6rem;
+    }
+    .ferra-dif-card p { font-size: 0.88rem; color: var(--cinza-texto); line-height: 1.65; }
+
+    .ferra-categorias-wrap {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .ferra-cat-block {
+      background: var(--verde);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+    .ferra-cat-block h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--ouro);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+    .ferra-cat-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .ferra-cat-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(201,162,39,0.15);
+      border: 1px solid rgba(201,162,39,0.35);
+      color: var(--ouro-claro);
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+    .ferra-cat-tag:hover { background: rgba(201,162,39,0.28); }
+
+    .ferra-acess-block {
+      background: var(--cinza-claro);
+      border-radius: 12px;
+      padding: 2.5rem;
+      border-top: 4px solid var(--ouro);
+    }
+    .ferra-acess-block h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--verde);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    .ferra-acess-block p { font-size: 0.88rem; color: var(--cinza-texto); line-height: 1.7; margin-bottom: 1rem; }
+    .ferra-acess-list { display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0; }
+    .ferra-acess-list li {
+      font-size: 0.83rem;
+      color: var(--cinza-texto);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .ferra-acess-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--ouro);
+      margin-top: 0.45rem;
+    }
+
+    @media (max-width: 900px) {
+      .ferra-esp-header { grid-template-columns: 1fr; gap: 1.5rem; }
+      .ferra-difs-grid { grid-template-columns: 1fr; }
+      .ferra-categorias-wrap { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1112,7 +1259,7 @@
     <div class="hero-content">
       <span class="hero-badge">Londrina/PR — Fornecimento nacional</span>
       <h1 id="hero-title">General<br>Tools <span>Brasil</span></h1>
-      <p class="hero-sub">Solução completa em fluidos de usinagem, desengraxantes, químicos industriais, ferramentas e maquinário de alta performance para a sua produção.</p>
+      <p class="hero-sub">Dois pilares, uma entrega: fluidos industriais de alta performance e ferramentas de usinagem rigorosamente selecionadas para o mercado metal-mecânico. Sediados em Londrina/PR — fornecimento nacional.</p>
       <div class="hero-actions">
         <a href="https://wa.me/554333391209" class="btn-primary" aria-label="Entrar em contato pelo WhatsApp">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.556 4.122 1.528 5.852L.057 23.4a.75.75 0 00.935.933l5.624-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.943 0-3.752-.532-5.299-1.454l-.38-.227-3.936 1.027 1.048-3.828-.248-.394A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -1150,24 +1297,24 @@
       <div class="sobre-visual fade-in">
         <div class="sobre-card-main">
           <h3>Nossa origem</h3>
-          <p>O Grupo General Tools nasceu da prática. Com mais de 18 anos de experiência em usinagem, desenvolvemos soluções que testamos e validamos em nosso próprio centro de produção antes de oferecer ao mercado.</p>
+          <p>O Grupo General Tools nasceu da prática. Com mais de 18 anos no chão de fábrica, desenvolvemos dois pilares sólidos: fluidos industriais de alta performance e ferramentas de usinagem rigorosamente validadas — tudo testado em nosso próprio centro de produção antes de chegar ao cliente.</p>
         </div>
         <div class="sobre-cards-row">
           <div class="sobre-mini">
             <h4>Missão</h4>
-            <p>Solução completa em químicos industriais para garantir continuidade, conservação e eficiência técnica.</p>
+            <p>Ser parceiro técnico completo da indústria metal-mecânica: dos fluidos que refrigeram e lubrificam ao ferramental que corta com precisão.</p>
           </div>
           <div class="sobre-mini">
             <h4>Visão</h4>
-            <p>Ser referência em confiabilidade e agilidade no fornecimento de fluidos industriais em todo o Brasil.</p>
+            <p>Consolidar-se como referência nacional em fluidos industriais e ferramentas de usinagem, unindo vivência prática e entrega ágil.</p>
           </div>
         </div>
       </div>
       <div class="sobre-text fade-in fade-in-delay-1">
         <span class="section-label" aria-hidden="true">Quem somos</span>
         <h2 id="sobre-title">Parceiros do chão de fábrica</h2>
-        <p>A General Tools Brasil fornece insumos de alta performance para a indústria. O que nos diferencia é simples: somos usuários daquilo que vendemos.</p>
-        <p>Sediados em Londrina/PR, cada produto do nosso catálogo é testado e validado em nosso próprio centro de usinagem. Isso nos dá a segurança de oferecer qualidade real, em volumes que se adaptam à sua necessidade — de 1 litro a 1.000 litros.</p>
+        <p>A General Tools Brasil não é apenas distribuidora — somos praticantes. Com mais de 18 anos de experiência direta em usinagem, construímos uma empresa que atua em dois pilares complementares: <strong>fluidos industriais</strong> de alta performance e <strong>ferramentas de corte</strong> rigorosamente selecionadas para o mercado metal-mecânico.</p>
+        <p>Sediados em Londrina/PR, cada produto do nosso catálogo — seja um fluido de corte ou um inserto de metal duro — é testado e validado em nosso próprio centro de usinagem. Não vendemos o que não usamos. Isso nos dá segurança técnica real para atender volumes que se adaptam à sua operação.</p>
         <div class="valores-list" role="list">
           <div class="valor-item" role="listitem">
             <div class="valor-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></div>
@@ -1193,6 +1340,84 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ─── FERRAMENTAS ESPECIALIDADE ─── -->
+<section id="ferramentas-especialidade" aria-labelledby="ferra-esp-title">
+  <div class="section-inner">
+
+    <div class="ferra-esp-header">
+      <div>
+        <span class="section-label" aria-hidden="true">Ferramentas de usinagem</span>
+        <h2 id="ferra-esp-title">Ferramentas de quem realmente entende de chão de fábrica</h2>
+      </div>
+      <div>
+        <p class="section-desc">Sediado em Londrina/PR, o Grupo General Tools une tecnologia de ponta e vivência prática para entregar soluções de alta performance para o mercado metal-mecânico.</p>
+      </div>
+    </div>
+
+    <div class="ferra-especialidade-box">
+      <p>Com mais de <strong>18 anos de atuação direta no chão de fábrica</strong>, entendemos que a produtividade depende da confiabilidade de cada aresta de corte. Nossa linha de ferramentas nasce de necessidades reais: cada item do nosso portfólio é rigorosamente selecionado, testado e validado em nosso próprio centro de usinagem antes de ser oferecido ao mercado. <strong>Não vendemos apenas ferramentas; entregamos processos otimizados.</strong></p>
+    </div>
+
+    <div class="ferra-difs-grid">
+      <div class="ferra-dif-card">
+        <div class="ferra-dif-ic">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg>
+        </div>
+        <h3>Qualidade comprovada por especialistas</h3>
+        <p>Só integramos ao nosso catálogo os itens que superam nossos rigorosos testes de desgaste, tolerância geométrica e acabamento superficial.</p>
+      </div>
+      <div class="ferra-dif-card">
+        <div class="ferra-dif-ic">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        </div>
+        <h3>Precisão técnica aplicada</h3>
+        <p>Ferramentas testadas em condições severas de produção real, assegurando máxima previsibilidade e repetibilidade nas suas operações.</p>
+      </div>
+      <div class="ferra-dif-card">
+        <div class="ferra-dif-ic">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3>Seleção criteriosa de fornecedores</h3>
+        <p>Parcerias globais homologadas sob os mais rígidos padrões de metalurgia do pó e engenharia de superfícies (revestimentos).</p>
+      </div>
+      <div class="ferra-dif-card">
+        <div class="ferra-dif-ic">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Suporte operacional especializado</h3>
+        <p>Nossa equipe técnica auxilia na escolha do ferramental correto e indica os parâmetros de corte ideais para cada material e operação.</p>
+      </div>
+    </div>
+
+    <div class="ferra-categorias-wrap">
+      <div class="ferra-cat-block">
+        <h3>Categorias de ferramentas de usinagem</h3>
+        <div class="ferra-cat-list">
+          <span class="ferra-cat-tag">Pastilhas / Insertos</span>
+          <span class="ferra-cat-tag">Suportes Externo e Interno</span>
+          <span class="ferra-cat-tag">Fresas de Metal Duro Integral</span>
+          <span class="ferra-cat-tag">Cabeçotes e Fresas Intercambiáveis</span>
+          <span class="ferra-cat-tag">Brocas de Metal</span>
+          <span class="ferra-cat-tag">Machos HSS-E / Metal Duro</span>
+          <span class="ferra-cat-tag">Cossinetes</span>
+        </div>
+      </div>
+      <div class="ferra-acess-block">
+        <h3>Acessórios</h3>
+        <p>Itens complementares indispensáveis para manter a precisão, repetibilidade e segurança no ambiente produtivo.</p>
+        <ul class="ferra-acess-list">
+          <li>Pinças de alta precisão (ER)</li>
+          <li>Parafusos de fixação de reposição</li>
+          <li>Chaves Torx/Allen calibradas</li>
+          <li>Calços de proteção para suportes</li>
+          <li>Instrumentos de preset e medição de ferramentas</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
